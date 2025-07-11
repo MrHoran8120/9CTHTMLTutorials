@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5 - Position Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        .exercise-container {
+            margin-bottom: 40px;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .exercise-title {
+            color: #333;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-left: 4px solid #007acc;
+            margin-bottom: 20px;
+        }
+
+        /* Exercise 1: Card with Badge */
+        .card {
+            width: 250px;
+            height: 150px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px;
+            /* TODO: Add position property to create positioning context */
+        }
+
+        .badge {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            /* TODO: Position this badge in the top-right corner of the card */
+        }
+
+        /* Exercise 2: Modal Overlay */
+        .modal-trigger {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .modal-overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            /* TODO: Position this overlay to cover the entire viewport */
+        }
+
+        .modal-content {
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            /* TODO: Center this content in the middle of the overlay */
+        }
+
+        /* Exercise 3: Sticky Navigation */
+        .content-spacer {
+            height: 100px;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 20px;
+        }
+
+        .nav-bar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin: 20px 0;
+            /* TODO: Make this navigation bar stick to the top when scrolling */
+        }
+
+        /* Exercise 4: Tooltip */
+        .tooltip-container {
+            display: inline-block;
+            margin: 20px;
+            /* TODO: Add position property to create positioning context */
+        }
+
+        .tooltip-trigger {
+            background-color: #007acc;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            background-color: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            display: none; /* Hidden by default */
+            /* TODO: Position this tooltip above the button */
+        }
+
+        .tooltip::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #333;
+            /* TODO: Position this arrow at the bottom center of the tooltip */
+        }
+
+        /* Exercise 5: Multi-layer Layout */
+        .layer-container {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            margin: 20px;
+            /* TODO: Add position property to create positioning context */
+        }
+
+        .layer1 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.7);
+            /* TODO: Position in top-left corner */
+        }
+
+        .layer2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 255, 0, 0.7);
+            /* TODO: Position in center */
+        }
+
+        .layer3 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 255, 0.7);
+            /* TODO: Position in bottom-right corner */
+        }
+
+        /* Solution hints (uncomment to see solutions) */
+        /*
+        .card { position: relative; }
+        .badge { position: absolute; top: -10px; right: -10px; }
+        
+        .modal-overlay { position: fixed; top: 0; left: 0; }
+        .modal-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        
+        .nav-bar { position: sticky; top: 0; }
+        
+        .tooltip-container { position: relative; }
+        .tooltip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); }
+        .tooltip::after { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); }
+        
+        .layer-container { position: relative; }
+        .layer1 { position: absolute; top: 10px; left: 10px; }
+        .layer2 { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .layer3 { position: absolute; bottom: 10px; right: 10px; }
+        */
+    </style>
+</head>
+<body>
+    <h1>L5 - Position Exercise</h1>
+    <p>Complete the exercises below by adding CSS position properties to achieve the described layouts. Look for TODO comments in the CSS for guidance.</p>
+
+    <!-- Exercise 1: Card with Badge -->
+    <div class="exercise-container">
+        <h2 class="exercise-title">Exercise 1: Card with Badge</h2>
+        <div class="instructions">
+            <strong>Task:</strong> Position the red badge in the top-right corner of the card, partially overlapping the border.
+            <br><strong>Hint:</strong> Use relative positioning on the card and absolute positioning on the badge.
+        </div>
+        
+        <div class="card">
+            <div class="badge">5</div>
+            <h3>Product Card</h3>
+            <p>This is a sample product card with a notification badge.</p>
+        </div>
+    </div>
+
+    <!-- Exercise 2: Modal Overlay -->
+    <div class="exercise-container">
+        <h2 class="exercise-title">Exercise 2: Modal Overlay</h2>
+        <div class="instructions">
+            <strong>Task:</strong> Create a full-screen overlay with centered modal content.
+            <br><strong>Hint:</strong> Use fixed positioning for the overlay and center the content using absolute positioning and transform.
+        </div>
+        
+        <button class="modal-trigger" onclick="showModal()">Open Modal</button>
+        
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <h3>Modal Content</h3>
+                <p>This modal should be centered on the screen with a dark overlay behind it.</p>
+                <button onclick="hideModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 3: Sticky Navigation -->
+    <div class="exercise-container">
+        <h2 class="exercise-title">Exercise 3: Sticky Navigation</h2>
+        <div class="instructions">
+            <strong>Task:</strong> Make the navigation bar stick to the top of the screen when scrolling.
+            <br><strong>Hint:</strong> Use sticky positioning with top: 0.
+        </div>
+        
+        <div class="content-spacer">Content before navigation</div>
+        
+        <nav class="nav-bar">
+            <strong>Navigation Bar</strong> - This should stick to the top when scrolling
+        </nav>
+        
+        <div class="content-spacer">Content section 1</div>
+        <div class="content-spacer">Content section 2</div>
+        <div class="content-spacer">Content section 3</div>
+        <div class="content-spacer">Content section 4</div>
+        <div class="content-spacer">Content section 5</div>
+    </div>
+
+    <!-- Exercise 4: Tooltip -->
+    <div class="exercise-container">
+        <h2 class="exercise-title">Exercise 4: Tooltip</h2>
+        <div class="instructions">
+            <strong>Task:</strong> Position the tooltip above the button and center it horizontally.
+            <br><strong>Hint:</strong> Use relative positioning on the container and absolute positioning on the tooltip.
+        </div>
+        
+        <div class="tooltip-container">
+            <button class="tooltip-trigger" onmouseover="showTooltip()" onmouseout="hideTooltip()">
+                Hover for Tooltip
+            </button>
+            <div class="tooltip" id="tooltip">This is a helpful tooltip message</div>
+        </div>
+    </div>
+
+    <!-- Exercise 5: Multi-layer Layout -->
+    <div class="exercise-container">
+        <h2 class="exercise-title">Exercise 5: Multi-layer Layout</h2>
+        <div class="instructions">
+            <strong>Task:</strong> Position three colored squares in different corners and center of the container.
+            <br><strong>Hint:</strong> Use relative positioning on the container and absolute positioning on each layer.
+        </div>
+        
+        <div class="layer-container">
+            <div class="layer1"></div>
+            <div class="layer2"></div>
+            <div class="layer3"></div>
+        </div>
+    </div>
+
+    <div style="height: 200px; background-color: #f0f0f0; text-align: center; padding: 50px;">
+        <h3>End of Exercises</h3>
+        <p>Scroll back up to test the sticky navigation!</p>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById('modalOverlay').style.display = 'block';
+        }
+
+        function hideModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function showTooltip() {
+            document.getElementById('tooltip').style.display = 'block';
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

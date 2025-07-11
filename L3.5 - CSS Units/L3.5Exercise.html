@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units Exercise</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2196f3;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2196f3;
+            padding-bottom: 15px;
+        }
+        
+        .exercise {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .task {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .task h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .demo-area {
+            background: #fff;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 15px 0;
+            min-height: 100px;
+            border-radius: 5px;
+        }
+        
+        .code-hint {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .checklist {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .viewport-demo {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 20px;
+            font-weight: bold;
+        }
+        
+        /* Students will modify these classes */
+        .box-px {
+            background: #2196f3;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+            /* TODO: Add pixel-based width and height */
+        }
+        
+        .box-percent {
+            background: #ff9800;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+            /* TODO: Add percentage-based width */
+        }
+        
+        .box-rem {
+            background: #4caf50;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+            /* TODO: Add rem-based dimensions and spacing */
+        }
+        
+        .box-viewport {
+            background: #9c27b0;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+            /* TODO: Add viewport-based dimensions */
+        }
+        
+        .responsive-text {
+            background: #f44336;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+            /* TODO: Add responsive font-size using clamp() */
+        }
+        
+        .parent-container {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 20px; /* This affects em calculations */
+        }
+        
+        .em-child {
+            background: #2196f3;
+            color: white;
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 3px;
+            /* TODO: Add em-based padding and margin */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 CSS Units Practice Exercise</h1>
+        
+        <div class="exercise">
+            <h2>📋 Your Mission</h2>
+            <p>Complete the CSS challenges below by adding appropriate CSS units to create responsive and well-structured layouts. Each task focuses on a different type of CSS unit.</p>
+        </div>
+
+        <div class="task">
+            <h3>Task 1: Pixel Units (px)</h3>
+            <p>Add fixed pixel dimensions to this box. Make it exactly 200px wide and 100px tall.</p>
+            
+            <div class="demo-area">
+                <div class="box-px">I need fixed pixel dimensions!</div>
+            </div>
+            
+            <div class="code-hint">
+/* Add these properties to .box-px in the CSS above */
+width: ???px;
+height: ???px;
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Task 2: Percentage Units (%)</h3>
+            <p>Make this box take up 75% of its container's width.</p>
+            
+            <div class="demo-area">
+                <div class="box-percent">I should be 75% of my parent's width!</div>
+            </div>
+            
+            <div class="code-hint">
+/* Add this property to .box-percent */
+width: ???%;
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Task 3: Rem Units (rem)</h3>
+            <p>Use rem units to make this box 20rem wide and give it 2rem padding on all sides.</p>
+            
+            <div class="demo-area">
+                <div class="box-rem">I need rem-based sizing and spacing!</div>
+            </div>
+            
+            <div class="code-hint">
+/* Add these properties to .box-rem */
+width: ???rem;
+padding: ???rem;
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Task 4: Em Units (em)</h3>
+            <p>The parent container below has font-size: 20px. Make the child use em units for padding (1em) and margin (0.5em).</p>
+            
+            <div class="demo-area">
+                <div class="parent-container">
+                    Parent (20px font-size)
+                    <div class="em-child">Child - add em-based spacing!</div>
+                    <div class="em-child">Another child</div>
+                </div>
+            </div>
+            
+            <div class="code-hint">
+/* Add these properties to .em-child */
+padding: ???em;
+margin: ???em;
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Task 5: Viewport Units (vw, vh)</h3>
+            <p>Make this box 50vw (50% of viewport width) wide and 20vh (20% of viewport height) tall. Try resizing your browser to see it adapt!</p>
+            
+            <div class="demo-area">
+                <div class="box-viewport">I should adapt to the viewport size!</div>
+            </div>
+            
+            <div class="code-hint">
+/* Add these properties to .box-viewport */
+width: ???vw;
+height: ???vh;
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Task 6: Modern CSS - clamp()</h3>
+            <p>Use clamp() to create responsive text that's never smaller than 1rem, never larger than 3rem, but prefers 5vw.</p>
+            
+            <div class="demo-area">
+                <div class="responsive-text">
+                    My text size adapts but stays readable!
+                </div>
+            </div>
+            
+            <div class="code-hint">
+/* Add this property to .responsive-text */
+font-size: clamp(???rem, ???vw, ???rem);
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h3>✅ Success Checklist</h3>
+            <p>When you've completed all tasks correctly, you should see:</p>
+            <ul>
+                <li>📏 Box 1: Fixed 200px × 100px blue box</li>
+                <li>📊 Box 2: Orange box taking 75% of container width</li>
+                <li>📐 Box 3: Green box with consistent rem-based sizing</li>
+                <li>🔢 Box 4: Child boxes with em-based spacing relative to parent</li>
+                <li>📱 Box 5: Purple box that changes size when you resize the browser</li>
+                <li>📝 Box 6: Text that scales smoothly but stays readable</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <h3>🎉 Bonus Challenges!</h3>
+            <p>Once you complete the basic tasks, try these advanced challenges:</p>
+            <ol>
+                <li><strong>Mix units:</strong> Create a box that uses px for border, rem for padding, and % for width</li>
+                <li><strong>Responsive grid:</strong> Use CSS Grid with fr units and minimum sizes</li>
+                <li><strong>Mobile-first:</strong> Use media queries to change units based on screen size</li>
+                <li><strong>Accessibility:</strong> Ensure all text can be zoomed to 200% without breaking</li>
+            </ol>
+        </div>
+
+        <div class="viewport-demo">
+            This box demonstrates viewport units in action!<br>
+            Try resizing your browser window to see how it adapts.
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px; text-align: center;">
+            <p><strong>💡 Hint:</strong> Open your browser's Developer Tools (F12) to experiment with different values and see immediate results!</p>
+            <p><strong>📚 Reference:</strong> Check the complete guide in <code>L3.5.html</code> if you need help with any units.</p>
+        </div>
+    </div>
+</body>
+</html>

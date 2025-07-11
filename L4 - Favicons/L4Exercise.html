@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    
+    <!-- TODO: Add your favicon here -->
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2196f3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .exercise {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+        }
+        
+        .step h3 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .checklist {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .checklist ul {
+            margin-left: 20px;
+        }
+        
+        .tab-demo {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px 0;
+            border: 2px dashed #ccc;
+        }
+        
+        .no-favicon {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .with-favicon {
+            color: #2196f3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Favicon Exercise - Add Your Icon!</h1>
+        
+        <div class="exercise">
+            <h2>📋 Your Mission</h2>
+            <p>This page currently has <strong>no favicon</strong>! Your job is to add one and see the difference it makes in the browser tab.</p>
+        </div>
+        
+        <div class="tab-demo">
+            <p><strong>Current browser tab looks like:</strong></p>
+            <div class="no-favicon">📄 My Website (no icon)</div>
+            
+            <p style="margin: 20px 0;"><strong>After adding favicon:</strong></p>
+            <div class="with-favicon">🎯 My Website (with your icon!)</div>
+        </div>
+        
+        <div class="step">
+            <h3>Step 1: Choose Your Favicon Method</h3>
+            <p>Pick one of these options:</p>
+            <ul>
+                <li><strong>Option A:</strong> Use a simple .ico file</li>
+                <li><strong>Option B:</strong> Use a .png file</li>
+                <li><strong>Option C:</strong> Create multiple sizes (recommended)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Step 2: Get Your Favicon File</h3>
+            <p><strong>Quick method:</strong></p>
+            <ol>
+                <li>Go to <strong>favicon.io</strong></li>
+                <li>Choose "Text" and enter a letter or emoji</li>
+                <li>Download the generated files</li>
+                <li>Save them in the same folder as this HTML file</li>
+            </ol>
+            
+            <p><strong>Alternative:</strong> Find a small 32x32 pixel PNG image and rename it to "favicon.png"</p>
+        </div>
+        
+        <div class="step">
+            <h3>Step 3: Add the HTML Code</h3>
+            <p>Uncomment and modify the line in the &lt;head&gt; section:</p>
+            
+            <div class="code">
+&lt;!-- Replace this comment with one of these: --&gt;
+
+&lt;!-- Option A: Basic ICO file --&gt;
+&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+
+&lt;!-- Option B: PNG file --&gt;
+&lt;link rel="icon" type="image/png" href="favicon.png"&gt;
+
+&lt;!-- Option C: Multiple sizes (best practice) --&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"&gt;
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>Step 4: Test Your Favicon</h3>
+            <p>Save the file and refresh this page. You should see your icon in:</p>
+            <ul>
+                <li>The browser tab next to the page title</li>
+                <li>Bookmarks (if you bookmark this page)</li>
+                <li>Browser history</li>
+            </ul>
+        </div>
+        
+        <div class="checklist">
+            <h3>✅ Success Checklist</h3>
+            <ul>
+                <li>📁 Favicon file is in the same folder as the HTML file</li>
+                <li>🔗 HTML link tag is added to the &lt;head&gt; section</li>
+                <li>💾 File is saved</li>
+                <li>🔄 Page is refreshed (try Ctrl+F5 for hard refresh)</li>
+                <li>👀 Icon appears in browser tab</li>
+            </ul>
+        </div>
+        
+        <div class="success">
+            <h3>🎉 Congratulations!</h3>
+            <p>Once you see your favicon in the browser tab, you've successfully completed the exercise! This small detail makes a big difference in professional web development.</p>
+        </div>
+        
+        <div class="exercise">
+            <h2>🚀 Extra Challenges</h2>
+            <ol>
+                <li>Try creating different favicon sizes (16x16, 32x32, 180x180)</li>
+                <li>Test your favicon in different browsers</li>
+                <li>Create a custom design using Canva or another design tool</li>
+                <li>Add Apple touch icons for mobile devices</li>
+                <li>Create a web app manifest file</li>
+            </ol>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px; text-align: center;">
+            <p><strong>Need help?</strong> Check the <code>L4.html</code> file for a complete example with all favicon types!</p>
+        </div>
+    </div>
+</body>
+</html>
