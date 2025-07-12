@@ -1,5 +1,14 @@
 # Lesson 5 - CSS Position
 
+https://www.youtube.com/embed/lxvnl7dul_M
+
+The above video summarises the lesson. If you can't hear the audio you might need to open the video manually through another video playing app.
+
+## Overview
+...existing content...
+```
+The above video summarises the lesson. If you can't hear the audio you might need to open the video manually through another video playing app.
+
 ## Overview
 
 This lesson introduces CSS positioning, one of the most important concepts for controlling element layout and creating complex designs. Students will learn how to use different position values to place elements precisely where they want them, understanding the relationship between parent and child elements, and how positioning affects document flow.

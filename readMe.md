@@ -1,48 +1,24 @@
-# 9CT Web Development Course - HTML, CSS & JavaScript
+# 9CT Web Development Course - HTML & CSS
 
 ## Overview
 
-Welcome to the 9CT Web Development learning repository! This repository contains all the resources, tutorials, and examples we'll use throughout our journey learning HTML, CSS, and JavaScript.
+Web development tutorials covering HTML basics through advanced CSS positioning techniques.
 
-## Course Content
+## Lessons
 
-This repository includes:
+- **L1 - Basics**: HTML structure, CSS fundamentals, hyperlinking
+- **L2 - Flexbox**: Flexible layouts and responsive design
+- **L3 - Positioning**: CSS positioning fundamentals  
+- **L3.5 - CSS Units**: Absolute vs relative units, modern CSS functions
+- **L4 - Favicons**: Icons, manifests, and browser configuration
+- **L5 - Position**: Advanced positioning techniques and document flow
 
-- HTML fundamentals and best practices
-- CSS styling and layout techniques
-- JavaScript programming basics
-- Interactive examples and exercises
-- Project templates and starter files
+## Quick Start
 
-## Getting Started
-
-### For Students
-
-1. **Clone this repository** to your local computer:
-
-   ```bash
-   git clone [repository-url]
-   ```
-
-2. **Keep your local copy updated** by pulling the latest changes after each class:
-
-   ```bash
-   git pull origin main
-   ```
-
-3. **Navigate to the specific lesson folders** to access materials for each topic
-
-### Repository Structure
-
-```text
-9CTHTMLTutorials/
-├── HTML-Basics/
-├── CSS-Fundamentals/
-├── JavaScript-Intro/
-├── Projects/
-├── Resources/
-└── README.md
-```
+1. Clone the repository
+2. Open any lesson folder
+3. View README.md for lesson overview
+4. Open HTML files in browser to see demos
 
 ## Learning Objectives
 
