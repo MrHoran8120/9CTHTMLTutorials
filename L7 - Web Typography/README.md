@@ -6,7 +6,7 @@ This lesson will show how you can use fonts.google.com to choose and distribute 
 
 We want to make our websites look professional and consistent across all browsers and devices by using custom fonts.
 
-![Font Example Screenshot](screenshot.png)
+![Font Example Screenshot](./sourceFiles/Screenshot%202025-07-12%20181503.png)
 *Example of custom fonts applied to a webpage using @font-face* 
 
 
