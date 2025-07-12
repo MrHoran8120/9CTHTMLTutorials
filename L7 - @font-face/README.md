@@ -6,8 +6,12 @@ This lesson will show how you can use fonts.google.com to choose and distribute 
 
 We want to make our websites look professional and consistent across all browsers and devices by using custom fonts.
 
+For this exercise will will convert this page to :
+
 ![Font Example Screenshot](./sourceFiles/Screenshot%202025-07-12%20181503.png)
-*Example of custom fonts applied to a webpage using @font-face* 
+
+this :
+![Font Example Screenshot](./sourceFiles/Screenshot%202025-07-12%20184840.png)
 
 
 ## Learning Objectives
@@ -26,27 +30,9 @@ The `@font-face` CSS rule allows you to define custom fonts for use in your web 
 
 ## Two Methods of Using Web Fonts
 
-### Method 1: Google Fonts (Recommended for Beginners)
+### Method 1: Custom @font-face (For Local Font Files)
 
-**Step 1:** Visit [fonts.google.com](https://fonts.google.com)
-
-**Step 2:** Choose your font and select the weights you need
-
-**Step 3:** Copy the `<link>` tag to your HTML head:
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-```
-
-**Step 4:** Use the font in your CSS:
-```css
-body {
-    font-family: 'Roboto', sans-serif;
-}
-```
-
-### Method 2: Custom @font-face (For Local Font Files)
+There are two different methods for using custom fonts in web pages. We will only be using the first method as that is the method you MUST use in the assessment task.
 
 **Step 1:** Place your font file (`.ttf`, `.woff`, `.woff2`) in your project folder
 
@@ -66,6 +52,26 @@ body {
 ```css
 h1 {
     font-family: 'MyCustomFont', serif;
+}
+```
+
+### Method 2: Google Fonts (Alternative Method)
+
+**Step 1:** Visit [fonts.google.com](https://fonts.google.com)
+
+**Step 2:** Choose your font and select the weights you need
+
+**Step 3:** Copy the `<link>` tag to your HTML head:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+```
+
+**Step 4:** Use the font in your CSS:
+```css
+body {
+    font-family: 'Roboto', sans-serif;
 }
 ```
 
