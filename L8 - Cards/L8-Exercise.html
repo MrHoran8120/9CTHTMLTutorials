@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L8 Exercise - Create a Product Card Gallery</title>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --success-color: #00b894;
+            --danger-color: #e17055;
+            --warning-color: #fdcb6e;
+            --dark-color: #2d3436;
+            --light-color: #ddd;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .instructions {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .instructions h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .requirements {
+            background: #e8f4fd;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .requirements h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .requirements ul {
+            margin-left: 20px;
+        }
+
+        /* Exercise Area */
+        .exercise-area {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .exercise-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        /* TODO: Students will add their product card styles here */
+        .product-gallery {
+            /* Add your CSS Grid or Flexbox layout here */
+        }
+
+        .product-card {
+            /* Add your card styling here */
+            /* Remember to include:
+               - Background color
+               - Border radius
+               - Box shadow
+               - Padding
+               - Transition effects
+            */
+        }
+
+        .product-image {
+            /* Style the product images */
+        }
+
+        .product-info {
+            /* Style the product information section */
+        }
+
+        .product-title {
+            /* Style the product titles */
+        }
+
+        .product-price {
+            /* Style the product prices */
+        }
+
+        .product-description {
+            /* Style the product descriptions */
+        }
+
+        .add-to-cart-btn {
+            /* Style the Add to Cart buttons */
+        }
+
+        .sale-badge {
+            /* Style the SALE badges */
+        }
+
+        /* Example solution (hidden by default) */
+        .solution {
+            display: none;
+        }
+
+        .solution .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .solution .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .solution .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .solution .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .solution .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .solution .product-info {
+            padding: 20px;
+        }
+
+        .solution .product-title {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .solution .product-price {
+            font-size: 1.5rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .solution .product-description {
+            color: #636e72;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .solution .add-to-cart-btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .solution .add-to-cart-btn:hover {
+            background: #5b4cdb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+        }
+
+        .solution .sale-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--danger-color);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Toggle button for solution */
+        .toggle-solution {
+            background: var(--warning-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-solution:hover {
+            background: #e17055;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .instructions {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛍️ Product Card Gallery Exercise</h1>
+        <p class="subtitle">Create an attractive e-commerce product showcase using CSS cards</p>
+
+        <div class="instructions">
+            <h2>📝 Instructions</h2>
+            <ol>
+                <li><strong>Analyze the HTML structure</strong> below to understand the product card components</li>
+                <li><strong>Design the layout</strong> using CSS Grid or Flexbox to create a responsive gallery</li>
+                <li><strong>Style the cards</strong> with backgrounds, shadows, and rounded corners</li>
+                <li><strong>Add hover effects</strong> to make cards interactive (transform, shadow changes)</li>
+                <li><strong>Style individual elements</strong> like titles, prices, descriptions, and buttons</li>
+                <li><strong>Create responsive design</strong> that works on mobile devices</li>
+                <li><strong>Add finishing touches</strong> like the SALE badge positioning</li>
+            </ol>
+
+            <div class="requirements">
+                <h3>🎯 Requirements</h3>
+                <ul>
+                    <li>Use CSS Grid with <code>repeat(auto-fit, minmax(280px, 1fr))</code> for responsive layout</li>
+                    <li>Cards should have smooth hover animations (transform and box-shadow)</li>
+                    <li>Images should scale slightly on card hover</li>
+                    <li>Buttons should have hover effects</li>
+                    <li>SALE badges should be positioned absolutely in top-right corner</li>
+                    <li>Design should be mobile-responsive</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="exercise-area">
+            <h2 class="exercise-title">Your Product Gallery</h2>
+            
+            <!-- Students will style this HTML structure -->
+            <div class="product-gallery">
+                <div class="product-card">
+                    <div class="sale-badge">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=220&fit=crop" alt="Wireless Headphones" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Wireless Headphones</h3>
+                        <div class="product-price">$79.99</div>
+                        <p class="product-description">High-quality wireless headphones with noise cancellation and 30-hour battery life.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=220&fit=crop" alt="Smart Watch" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Smart Fitness Watch</h3>
+                        <div class="product-price">$199.99</div>
+                        <p class="product-description">Track your fitness goals with this advanced smartwatch featuring heart rate monitoring.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="sale-badge">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=220&fit=crop" alt="Laptop" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Ultra-Slim Laptop</h3>
+                        <div class="product-price">$899.99</div>
+                        <p class="product-description">Powerful ultrabook perfect for work and entertainment with 16GB RAM and SSD storage.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=300&h=220&fit=crop" alt="Smartphone" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Latest Smartphone</h3>
+                        <div class="product-price">$699.99</div>
+                        <p class="product-description">Cutting-edge smartphone with triple camera system and all-day battery life.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=220&fit=crop" alt="Gaming Keyboard" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Mechanical Gaming Keyboard</h3>
+                        <div class="product-price">$129.99</div>
+                        <p class="product-description">RGB backlit mechanical keyboard with premium switches for the ultimate gaming experience.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="sale-badge">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=220&fit=crop" alt="Webcam" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">4K Webcam</h3>
+                        <div class="product-price">$89.99</div>
+                        <p class="product-description">Crystal clear 4K webcam perfect for video calls, streaming, and content creation.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="toggle-solution" onclick="toggleSolution()">🔍 Show/Hide Solution</button>
+
+        <!-- Solution (initially hidden) -->
+        <div class="exercise-area solution" id="solution">
+            <h2 class="exercise-title">Solution Example</h2>
+            
+            <div class="product-gallery">
+                <div class="product-card">
+                    <div class="sale-badge">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=220&fit=crop" alt="Wireless Headphones" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Wireless Headphones</h3>
+                        <div class="product-price">$79.99</div>
+                        <p class="product-description">High-quality wireless headphones with noise cancellation and 30-hour battery life.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=220&fit=crop" alt="Smart Watch" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Smart Fitness Watch</h3>
+                        <div class="product-price">$199.99</div>
+                        <p class="product-description">Track your fitness goals with this advanced smartwatch featuring heart rate monitoring.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="sale-badge">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=220&fit=crop" alt="Laptop" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Ultra-Slim Laptop</h3>
+                        <div class="product-price">$899.99</div>
+                        <p class="product-description">Powerful ultrabook perfect for work and entertainment with 16GB RAM and SSD storage.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=300&h=220&fit=crop" alt="Smartphone" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Latest Smartphone</h3>
+                        <div class="product-price">$699.99</div>
+                        <p class="product-description">Cutting-edge smartphone with triple camera system and all-day battery life.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=220&fit=crop" alt="Gaming Keyboard" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Mechanical Gaming Keyboard</h3>
+                        <div class="product-price">$129.99</div>
+                        <p class="product-description">RGB backlit mechanical keyboard with premium switches for the ultimate gaming experience.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="sale-badge">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=220&fit=crop" alt="Webcam" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">4K Webcam</h3>
+                        <div class="product-price">$89.99</div>
+                        <p class="product-description">Crystal clear 4K webcam perfect for video calls, streaming, and content creation.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution() {
+            const solution = document.getElementById('solution');
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
