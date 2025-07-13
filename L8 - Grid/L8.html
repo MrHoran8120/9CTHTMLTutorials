@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L8 - CSS Grid Demo</title>
+    <style>
+        :root {
+            --primary-color: #9b59b6;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+            --danger-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro {
+            text-align: center;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .intro .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: var(--white);
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-container {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .demo-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        .demo-description {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* #region Basic Grid Demo */
+        .basic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .grid-item {
+            background: linear-gradient(135deg, var(--primary-color), #c44569);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-3px);
+        }
+        /* #endregion */
+
+        /* #region Auto-fit Grid Demo */
+        .auto-fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .auto-fit-item {
+            background: linear-gradient(135deg, var(--secondary-color), #74b9ff);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .auto-fit-item:hover {
+            transform: scale(1.05);
+        }
+        /* #endregion */
+
+        /* #region Photo Gallery Grid */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .photo-item {
+            background: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-caption {
+            padding: 15px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        /* #endregion */
+
+        /* #region Complex Layout Demo */
+        .complex-layout {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar content content"
+                "sidebar content content"
+                "footer footer footer";
+            grid-template-columns: 200px 1fr 1fr;
+            grid-template-rows: 80px 1fr 1fr 60px;
+            gap: 15px;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .layout-header {
+            grid-area: header;
+            background: linear-gradient(135deg, var(--accent-color), #fd79a8);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .layout-sidebar {
+            grid-area: sidebar;
+            background: linear-gradient(135deg, var(--success-color), #6c5ce7);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+            writing-mode: vertical-rl;
+        }
+
+        .layout-content {
+            grid-area: content;
+            background: linear-gradient(135deg, var(--secondary-color), #a29bfe);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .layout-footer {
+            grid-area: footer;
+            background: linear-gradient(135deg, var(--danger-color), #fd79a8);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        /* #endregion */
+
+        /* #region Dashboard Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-card:nth-child(2) {
+            border-left-color: var(--secondary-color);
+        }
+
+        .dashboard-card:nth-child(3) {
+            border-left-color: var(--accent-color);
+        }
+
+        .dashboard-card:nth-child(4) {
+            border-left-color: var(--success-color);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), #c44569);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        /* #endregion */
+
+        /* #region Responsive Grid */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .responsive-item {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .responsive-item:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        /* #endregion */
+
+        /* #region Code Display */
+        .code-display {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .code-display .property {
+            color: #3498db;
+        }
+
+        .code-display .value {
+            color: #e67e22;
+        }
+        /* #endregion */
+
+        /* #region Responsive Design */
+        @media (max-width: 768px) {
+            .complex-layout {
+                grid-template-areas: 
+                    "header"
+                    "content"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+                height: auto;
+            }
+
+            .layout-sidebar {
+                writing-mode: initial;
+                min-height: 60px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        /* #endregion */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 CSS Grid Mastery</h1>
+        
+        <div class="intro">
+            <p>Welcome to the comprehensive <span class="highlight">CSS Grid</span> tutorial!</p>
+            <p>Learn to create powerful 2D layouts with rows and columns working together.</p>
+        </div>
+
+        <h2 class="section-title">Basic 3-Column Grid</h2>
+        <div class="demo-container">
+            <div class="demo-title">Equal Columns with grid-template-columns: 1fr 1fr 1fr</div>
+            <div class="demo-description">
+                <strong>CSS:</strong> <code>display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;</code>
+            </div>
+            <div class="basic-grid">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+                <div class="grid-item">Item 6</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Auto-Fit Responsive Grid</h2>
+        <div class="demo-container">
+            <div class="demo-title">Responsive Grid with repeat(auto-fit, minmax(200px, 1fr))</div>
+            <div class="demo-description">
+                <strong>Magic:</strong> Items automatically wrap to new rows when screen gets smaller. Resize your browser to see it in action!
+            </div>
+            <div class="auto-fit-grid">
+                <div class="auto-fit-item">Responsive 1</div>
+                <div class="auto-fit-item">Responsive 2</div>
+                <div class="auto-fit-item">Responsive 3</div>
+                <div class="auto-fit-item">Responsive 4</div>
+                <div class="auto-fit-item">Responsive 5</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Photo Gallery Grid</h2>
+        <div class="demo-container">
+            <div class="demo-title">Image Gallery with Auto-Fit</div>
+            <div class="demo-description">
+                Perfect for photo galleries, product catalogs, or any image-based content.
+            </div>
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Mountain">
+                    <div class="photo-caption">Mountain Vista</div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=300&h=200&fit=crop" alt="Ocean">
+                    <div class="photo-caption">Ocean Waves</div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop" alt="Forest">
+                    <div class="photo-caption">Forest Path</div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300&h=200&fit=crop" alt="Desert">
+                    <div class="photo-caption">Desert Sunset</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Complex Layout with Grid Areas</h2>
+        <div class="demo-container">
+            <div class="demo-title">Website Layout using grid-template-areas</div>
+            <div class="demo-description">
+                <strong>Named Areas:</strong> Create complex layouts by naming grid areas. Perfect for website structures!
+            </div>
+            <div class="code-display">
+<span class="property">grid-template-areas:</span> 
+    <span class="value">"header header header"
+    "sidebar content content"
+    "sidebar content content"
+    "footer footer footer";</span>
+            </div>
+            <div class="complex-layout">
+                <div class="layout-header">HEADER</div>
+                <div class="layout-sidebar">SIDEBAR</div>
+                <div class="layout-content">MAIN CONTENT AREA</div>
+                <div class="layout-footer">FOOTER</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Dashboard Grid Layout</h2>
+        <div class="demo-container">
+            <div class="demo-title">Analytics Dashboard Cards</div>
+            <div class="demo-description">
+                Perfect for dashboards, admin panels, or any data visualization interface.
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">👥</div>
+                        <div class="card-title">Total Users</div>
+                    </div>
+                    <div class="card-value">12,847</div>
+                    <div class="card-description">↗️ +12% from last month</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary-color), #74b9ff);">💰</div>
+                        <div class="card-title">Revenue</div>
+                    </div>
+                    <div class="card-value">$48,329</div>
+                    <div class="card-description">↗️ +8% from last month</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--accent-color), #fd79a8);">📊</div>
+                        <div class="card-title">Conversions</div>
+                    </div>
+                    <div class="card-value">2,847</div>
+                    <div class="card-description">↗️ +23% from last month</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--success-color), #55a3ff);">⚡</div>
+                        <div class="card-title">Performance</div>
+                    </div>
+                    <div class="card-value">98.2%</div>
+                    <div class="card-description">↗️ +0.8% from last month</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Flexible Responsive Items</h2>
+        <div class="demo-container">
+            <div class="demo-title">Dynamic Grid Items</div>
+            <div class="demo-description">
+                Items that adapt to any screen size with smooth transitions and hover effects.
+            </div>
+            <div class="responsive-grid">
+                <div class="responsive-item">Flex 1</div>
+                <div class="responsive-item">Flex 2</div>
+                <div class="responsive-item">Flex 3</div>
+                <div class="responsive-item">Flex 4</div>
+                <div class="responsive-item">Flex 5</div>
+                <div class="responsive-item">Flex 6</div>
+                <div class="responsive-item">Flex 7</div>
+                <div class="responsive-item">Flex 8</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

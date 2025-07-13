@@ -1,6 +1,6 @@
 # CSS Cards - Resources
 
-This folder contains additional resources and assets for the L8 - Cards lesson.
+This folder contains additional resources and assets for the L9 - Cards lesson.
 
 ## Image Sources
 All images in the exercise files are sourced from Unsplash.com, which provides free high-quality photos that can be used for educational purposes.

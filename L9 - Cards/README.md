@@ -1,4 +1,4 @@
-# L8 - Cards
+# L9 - Cards
 
 ## Learning Objectives
 By the end of this lesson, students will be able to:
@@ -91,8 +91,8 @@ Cards are a popular UI design pattern that groups related information in a visua
 Cards using CSS Grid and Flexbox are supported in all modern browsers (IE11+).
 
 ## Files in this Lesson
-- `L8.html` - Interactive demo with various card types
-- `L8-Exercise.html` - Practice creating a card gallery
+- `L9.html` - Interactive demo with various card types
+- `L9-Exercise.html` - Practice creating a card gallery
 - `resources/` - Images and assets for the lesson
 
 ## Next Steps

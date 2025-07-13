@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L8 - Cards Demo</title>
+    <title>L9 - Cards Demo</title>
     <style>
         :root {
             --primary-color: #3498db;
@@ -98,6 +98,7 @@
         /* #region Image Cards */
         .image-cards {
             display: grid;
+            /* Card size is controlled by minmax(300px, 1fr) - minimum 300px width, grows to fill available space */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-bottom: 50px;

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L8 Exercise - CSS Grid Layout Challenge</title>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+            --danger-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --light-gray: #ecf0f1;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .instructions {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .instructions h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .challenge-box {
+            background: #e8f5e8;
+            border-left: 4px solid var(--success-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .challenge-box h3 {
+            color: var(--success-color);
+            margin-bottom: 10px;
+        }
+
+        .challenge-box ul {
+            margin-left: 20px;
+        }
+
+        /* Exercise Areas */
+        .exercise-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .exercise-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+        }
+
+        .exercise-description {
+            color: var(--dark-color);
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        /* Exercise 1: Basic Grid */
+        .basic-grid-exercise {
+            /* TODO: Students create a 4-column grid here */
+            /* Add your grid properties:
+               - display: grid
+               - grid-template-columns
+               - gap
+            */
+        }
+
+        .basic-grid-item {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Exercise 2: Photo Gallery */
+        .gallery-exercise {
+            /* TODO: Students create responsive photo gallery
+               - Use repeat(auto-fit, minmax(250px, 1fr))
+               - Add appropriate gap
+            */
+        }
+
+        .gallery-item {
+            background: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        /* Exercise 3: Website Layout */
+        .layout-exercise {
+            /* TODO: Students create website layout using grid-template-areas
+               Areas needed: header, nav, main, aside, footer
+               Height should be 500px
+            */
+        }
+
+        .layout-header {
+            background: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .layout-nav {
+            background: var(--secondary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .layout-main {
+            background: var(--accent-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .layout-aside {
+            background: var(--success-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .layout-footer {
+            background: var(--danger-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Solution styles (hidden by default) */
+        .solution {
+            display: none;
+        }
+
+        .solution .basic-grid-exercise {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .solution .gallery-exercise {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .solution .layout-exercise {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "nav main aside"
+                "nav main aside"
+                "footer footer footer";
+            grid-template-columns: 150px 1fr 200px;
+            grid-template-rows: 80px 1fr 1fr 60px;
+            gap: 15px;
+            height: 500px;
+        }
+
+        .solution .layout-header { grid-area: header; }
+        .solution .layout-nav { grid-area: nav; }
+        .solution .layout-main { grid-area: main; }
+        .solution .layout-aside { grid-area: aside; }
+        .solution .layout-footer { grid-area: footer; }
+
+        /* Toggle button */
+        .toggle-solution {
+            background: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-solution:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .instructions, .exercise-section {
+                padding: 20px;
+            }
+            
+            .solution .layout-exercise {
+                grid-template-areas: 
+                    "header"
+                    "nav"
+                    "main"
+                    "aside"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, auto);
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 CSS Grid Layout Challenge</h1>
+        <p class="subtitle">Master CSS Grid by building real-world layouts step by step</p>
+
+        <div class="instructions">
+            <h2>📋 Challenge Instructions</h2>
+            <p>Complete three progressively challenging Grid exercises. Each builds on the previous one to develop your Grid mastery!</p>
+            
+            <ol>
+                <li><strong>Study the HTML structure</strong> for each exercise below</li>
+                <li><strong>Add CSS Grid properties</strong> to the exercise containers</li>
+                <li><strong>Test responsiveness</strong> by resizing your browser window</li>
+                <li><strong>Check your work</strong> using the solution toggle button</li>
+                <li><strong>Experiment</strong> with different grid values to see what happens</li>
+            </ol>
+
+            <div class="challenge-box">
+                <h3>🎯 Learning Goals</h3>
+                <ul>
+                    <li>Master <code>display: grid</code> and basic grid properties</li>
+                    <li>Use <code>repeat()</code> and <code>minmax()</code> for responsive layouts</li>
+                    <li>Create complex layouts with <code>grid-template-areas</code></li>
+                    <li>Understand when to use Grid vs Flexbox</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Exercise 1: Basic Grid -->
+        <div class="exercise-section">
+            <h3 class="exercise-title">Challenge 1: 4-Column Product Grid</h3>
+            <div class="exercise-description">
+                <strong>Task:</strong> Create a 4-column grid with equal-width columns and 20px gaps.
+                <br><strong>CSS Properties Needed:</strong> <code>display: grid</code>, <code>grid-template-columns</code>, <code>gap</code>
+            </div>
+            
+            <div class="basic-grid-exercise">
+                <div class="basic-grid-item">Product 1</div>
+                <div class="basic-grid-item">Product 2</div>
+                <div class="basic-grid-item">Product 3</div>
+                <div class="basic-grid-item">Product 4</div>
+                <div class="basic-grid-item">Product 5</div>
+                <div class="basic-grid-item">Product 6</div>
+                <div class="basic-grid-item">Product 7</div>
+                <div class="basic-grid-item">Product 8</div>
+            </div>
+        </div>
+
+        <!-- Exercise 2: Responsive Photo Gallery -->
+        <div class="exercise-section">
+            <h3 class="exercise-title">Challenge 2: Responsive Photo Gallery</h3>
+            <div class="exercise-description">
+                <strong>Task:</strong> Create a responsive gallery that automatically adjusts columns based on screen size.
+                <br><strong>Hint:</strong> Use <code>repeat(auto-fit, minmax(250px, 1fr))</code>
+            </div>
+            
+            <div class="gallery-exercise">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Mountain">
+                    <div class="gallery-caption">Mountain Landscape</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=300&h=200&fit=crop" alt="Ocean">
+                    <div class="gallery-caption">Ocean View</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop" alt="Forest">
+                    <div class="gallery-caption">Forest Trail</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300&h=200&fit=crop" alt="Desert">
+                    <div class="gallery-caption">Desert Sunset</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464822759844-d150baec53b1?w=300&h=200&fit=crop" alt="Snow">
+                    <div class="gallery-caption">Snow Mountains</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502780402662-acc01917ee2e?w=300&h=200&fit=crop" alt="City">
+                    <div class="gallery-caption">City Skyline</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 3: Complex Website Layout -->
+        <div class="exercise-section">
+            <h3 class="exercise-title">Challenge 3: Complete Website Layout</h3>
+            <div class="exercise-description">
+                <strong>Task:</strong> Create a full website layout using named grid areas.
+                <br><strong>Grid Areas:</strong> header, nav, main, aside, footer
+                <br><strong>Advanced:</strong> Make it responsive on mobile devices!
+            </div>
+            
+            <div class="layout-exercise">
+                <div class="layout-header">HEADER - Logo & Navigation</div>
+                <div class="layout-nav">SIDEBAR - Menu Items</div>
+                <div class="layout-main">MAIN CONTENT - Articles & Posts</div>
+                <div class="layout-aside">ASIDE - Widgets & Ads</div>
+                <div class="layout-footer">FOOTER - Copyright & Links</div>
+            </div>
+        </div>
+
+        <button class="toggle-solution" onclick="toggleSolution()">🔍 Show/Hide Solutions</button>
+
+        <!-- Solution (initially hidden) -->
+        <div class="solution" id="solution">
+            <div class="exercise-section">
+                <h3 class="exercise-title">✅ Solution: All Challenges Completed</h3>
+                <div class="exercise-description">
+                    <strong>Great job!</strong> Here are the working solutions. Compare with your code and experiment with different values.
+                </div>
+                
+                <h4 style="color: var(--primary-color); margin: 25px 0 15px 0;">Challenge 1 Solution:</h4>
+                <div class="basic-grid-exercise">
+                    <div class="basic-grid-item">Product 1</div>
+                    <div class="basic-grid-item">Product 2</div>
+                    <div class="basic-grid-item">Product 3</div>
+                    <div class="basic-grid-item">Product 4</div>
+                    <div class="basic-grid-item">Product 5</div>
+                    <div class="basic-grid-item">Product 6</div>
+                    <div class="basic-grid-item">Product 7</div>
+                    <div class="basic-grid-item">Product 8</div>
+                </div>
+
+                <h4 style="color: var(--primary-color); margin: 25px 0 15px 0;">Challenge 2 Solution:</h4>
+                <div class="gallery-exercise">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Mountain">
+                        <div class="gallery-caption">Mountain Landscape</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=300&h=200&fit=crop" alt="Ocean">
+                        <div class="gallery-caption">Ocean View</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop" alt="Forest">
+                        <div class="gallery-caption">Forest Trail</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300&h=200&fit=crop" alt="Desert">
+                        <div class="gallery-caption">Desert Sunset</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1464822759844-d150baec53b1?w=300&h=200&fit=crop" alt="Snow">
+                        <div class="gallery-caption">Snow Mountains</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1502780402662-acc01917ee2e?w=300&h=200&fit=crop" alt="City">
+                        <div class="gallery-caption">City Skyline</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--primary-color); margin: 25px 0 15px 0;">Challenge 3 Solution:</h4>
+                <div class="layout-exercise">
+                    <div class="layout-header">HEADER - Logo & Navigation</div>
+                    <div class="layout-nav">SIDEBAR - Menu Items</div>
+                    <div class="layout-main">MAIN CONTENT - Articles & Posts</div>
+                    <div class="layout-aside">ASIDE - Widgets & Ads</div>
+                    <div class="layout-footer">FOOTER - Copyright & Links</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution() {
+            const solution = document.getElementById('solution');
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
