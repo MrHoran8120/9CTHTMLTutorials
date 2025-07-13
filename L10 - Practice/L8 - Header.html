@@ -9,6 +9,8 @@
   --yellow-button: #eac435;
   --green-button: rgb(95, 165, 3);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #ffffff;
+  
 }
         
 /* #region Header settings */
@@ -40,13 +42,131 @@
         }
 /* #endregion */
         
+        body {
+            margin : 0px
+        }
+
         .menubar {
+            background-color :#f2f2f2;
             display : flex;
             justify-content: space-between;
+            align-items: center;
             font-size: 10pt;
             font-family: 'inter', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        .menuBarItem {
+            padding : 12px 14px 8px
+        }
+
+        .menuBarItem:hover { 
+            background-color: white;
+        }
+
+        /* #region Mega Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 600px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .menuBarItem {
+            background-color: white;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .mega-menu-column {
+            padding: 10px;
+        }
+
+        .mega-menu-column h3 {
+            color: var(--green-button);
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f2f2f2;
+            padding-bottom: 8px;
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-column li {
+            margin-bottom: 8px;
+        }
+
+        .mega-menu-column a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .mega-menu-column a:hover {
+            color: var(--green-button);
+            padding-left: 5px;
+        }
+
+        .featured-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--yellow-button);
+        }
+
+        .featured-item h4 {
+            color: var(--green-button);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .featured-item p {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.4;
+        }
+        /* #endregion */
+
+        
+        .dogstuffPanel {
+            background-color: #ffffff;
+            width : 100%;
+            height : 200px;
+        }
+
+        .mainArea {
+            background-color :#f2f2f2;
+            width : 100%;
+            height : 500px;
+        }
 
     </style>
 </head>
@@ -69,13 +189,192 @@
     <div class="menubar">
         <span class="menuBarItem">MENU</span> 
         <div>
-            <span class="menuBarItem">DOGS</span>
-            <span class="menuBarItem">CATS</span>
-            <span class="menuBarItem">OTHER PETS</span>
-            <span class="menuBarItem">GET PET SUPPORT</span>
+            <div class="dropdown">
+                <span class="menuBarItem">DOGS&#9660</span>
+                <div class="dropdown-content">
+                    <div class="mega-menu-grid">
+                        <div class="mega-menu-column">
+                            <h3>Dog Breeds</h3>
+                            <ul>
+                                <li><a href="#">Large Breeds</a></li>
+                                <li><a href="#">Medium Breeds</a></li>
+                                <li><a href="#">Small Breeds</a></li>
+                                <li><a href="#">Working Dogs</a></li>
+                                <li><a href="#">Family Dogs</a></li>
+                                <li><a href="#">Guard Dogs</a></li>
+                            </ul>
+                            <div class="featured-item">
+                                <h4>Featured: Golden Retriever</h4>
+                                <p>Perfect family companion, gentle with children and highly trainable.</p>
+                            </div>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Dog Care</h3>
+                            <ul>
+                                <li><a href="#">Training Tips</a></li>
+                                <li><a href="#">Nutrition Guide</a></li>
+                                <li><a href="#">Exercise Needs</a></li>
+                                <li><a href="#">Grooming</a></li>
+                                <li><a href="#">Health & Wellness</a></li>
+                                <li><a href="#">Behavioral Issues</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Adoption</h3>
+                            <ul>
+                                <li><a href="#">Available Dogs</a></li>
+                                <li><a href="#">Adoption Process</a></li>
+                                <li><a href="#">Success Stories</a></li>
+                                <li><a href="#">Foster Program</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <span class="menuBarItem">CATS</span>
+                <div class="dropdown-content">
+                    <div class="mega-menu-grid">
+                        <div class="mega-menu-column">
+                            <h3>Cat Breeds</h3>
+                            <ul>
+                                <li><a href="#">Persian Cats</a></li>
+                                <li><a href="#">Siamese Cats</a></li>
+                                <li><a href="#">Maine Coon</a></li>
+                                <li><a href="#">British Shorthair</a></li>
+                                <li><a href="#">Ragdoll</a></li>
+                                <li><a href="#">Bengal</a></li>
+                            </ul>
+                            <div class="featured-item">
+                                <h4>Featured: Maine Coon</h4>
+                                <p>Gentle giants known for their friendly nature and beautiful long coats.</p>
+                            </div>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Cat Care</h3>
+                            <ul>
+                                <li><a href="#">Litter Box Training</a></li>
+                                <li><a href="#">Feeding Guidelines</a></li>
+                                <li><a href="#">Indoor vs Outdoor</a></li>
+                                <li><a href="#">Scratching Solutions</a></li>
+                                <li><a href="#">Health Care</a></li>
+                                <li><a href="#">Play & Enrichment</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Adoption</h3>
+                            <ul>
+                                <li><a href="#">Available Cats</a></li>
+                                <li><a href="#">Kitten Care</a></li>
+                                <li><a href="#">Senior Cats</a></li>
+                                <li><a href="#">Special Needs</a></li>
+                                <li><a href="#">Cat Fostering</a></li>
+                                <li><a href="#">Adoption Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <span class="menuBarItem">OTHER PETS</span>
+                <div class="dropdown-content">
+                    <div class="mega-menu-grid">
+                        <div class="mega-menu-column">
+                            <h3>Small Animals</h3>
+                            <ul>
+                                <li><a href="#">Rabbits</a></li>
+                                <li><a href="#">Guinea Pigs</a></li>
+                                <li><a href="#">Hamsters</a></li>
+                                <li><a href="#">Ferrets</a></li>
+                                <li><a href="#">Chinchillas</a></li>
+                                <li><a href="#">Rats & Mice</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Birds & Reptiles</h3>
+                            <ul>
+                                <li><a href="#">Parrots</a></li>
+                                <li><a href="#">Canaries</a></li>
+                                <li><a href="#">Turtles</a></li>
+                                <li><a href="#">Lizards</a></li>
+                                <li><a href="#">Snakes</a></li>
+                                <li><a href="#">Fish</a></li>
+                            </ul>
+                            <div class="featured-item">
+                                <h4>New: Exotic Care Guide</h4>
+                                <p>Essential information for caring for unique and exotic pets.</p>
+                            </div>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Farm Animals</h3>
+                            <ul>
+                                <li><a href="#">Horses</a></li>
+                                <li><a href="#">Goats</a></li>
+                                <li><a href="#">Pigs</a></li>
+                                <li><a href="#">Chickens</a></li>
+                                <li><a href="#">Ducks</a></li>
+                                <li><a href="#">Sheep</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <span class="menuBarItem">GET PET SUPPORT</span>
+                <div class="dropdown-content">
+                    <div class="mega-menu-grid">
+                        <div class="mega-menu-column">
+                            <h3>Emergency Services</h3>
+                            <ul>
+                                <li><a href="#">24/7 Vet Hotline</a></li>
+                                <li><a href="#">Emergency Clinics</a></li>
+                                <li><a href="#">Poison Control</a></li>
+                                <li><a href="#">First Aid Guide</a></li>
+                                <li><a href="#">Lost Pet Alert</a></li>
+                                <li><a href="#">Crisis Support</a></li>
+                            </ul>
+                            <div class="featured-item">
+                                <h4>Emergency: Call Now</h4>
+                                <p>24/7 emergency pet support hotline: 1-800-PET-HELP</p>
+                            </div>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Training & Behavior</h3>
+                            <ul>
+                                <li><a href="#">Professional Trainers</a></li>
+                                <li><a href="#">Behavioral Consultation</a></li>
+                                <li><a href="#">Online Classes</a></li>
+                                <li><a href="#">Puppy School</a></li>
+                                <li><a href="#">Aggression Help</a></li>
+                                <li><a href="#">Anxiety Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Resources</h3>
+                            <ul>
+                                <li><a href="#">Vet Directory</a></li>
+                                <li><a href="#">Pet Insurance</a></li>
+                                <li><a href="#">Financial Aid</a></li>
+                                <li><a href="#">Pet Supplies</a></li>
+                                <li><a href="#">Mobile Grooming</a></li>
+                                <li><a href="#">Pet Sitting</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <span class="menuBarItem">About PetRescue</span>
         <span class="menuBarItem">Good Reads</span>
+    </div>
+    <div class="mainArea">
+        
+        <div class="dogstuffPanel">dog stuff</div>
     </div>
 </body>
 </html>
