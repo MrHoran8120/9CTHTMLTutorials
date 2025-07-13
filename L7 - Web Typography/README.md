@@ -1,7 +1,5 @@
 # Lesson 7 - @Font-face
 
-[Watch the lesson video on YouTube](https://youtu.be/wB8d9AZyMzw)
-
 ## Overview
 
 This lesson will show how you can use fonts.google.com to choose and distribute fonts with your website and make sure the site will look just like you expect it to on every device.
@@ -32,7 +30,27 @@ The `@font-face` CSS rule allows you to define custom fonts for use in your web 
 
 ## Two Methods of Using Web Fonts
 
-### Method 1: Custom @font-face (For Local Font Files)
+### Method 1: Google Fonts (Recommended for Beginners)
+
+**Step 1:** Visit [fonts.google.com](https://fonts.google.com)
+
+**Step 2:** Choose your font and select the weights you need
+
+**Step 3:** Copy the `<link>` tag to your HTML head:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+```
+
+**Step 4:** Use the font in your CSS:
+```css
+body {
+    font-family: 'Roboto', sans-serif;
+}
+```
+
+### Method 2: Custom @font-face (For Local Font Files)
 
 There are two different methods for using custom fonts in web pages. We will only be using the first method as that is the method you MUST use in the assessment task.
 
@@ -54,26 +72,6 @@ There are two different methods for using custom fonts in web pages. We will onl
 ```css
 h1 {
     font-family: 'MyCustomFont', serif;
-}
-```
-
-### Method 2: Google Fonts (Alternative Method)
-
-**Step 1:** Visit [fonts.google.com](https://fonts.google.com)
-
-**Step 2:** Choose your font and select the weights you need
-
-**Step 3:** Copy the `<link>` tag to your HTML head:
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-```
-
-**Step 4:** Use the font in your CSS:
-```css
-body {
-    font-family: 'Roboto', sans-serif;
 }
 ```
 

@@ -12,6 +12,8 @@ Web development tutorials covering HTML basics through advanced CSS positioning 
 - **L3.5 - CSS Units**: Absolute vs relative units, modern CSS functions
 - **L4 - Favicons**: Icons, manifests, and browser configuration
 - **L5 - Position**: Advanced positioning techniques and document flow
+- **L6 - CSS Variables**: Custom properties for maintainable color management
+- **L7 - @font-face**: Custom fonts and typography implementation
 
 ## Quick Start
 

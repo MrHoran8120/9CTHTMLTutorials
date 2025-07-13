@@ -1,6 +1,6 @@
 # Lesson 5 - CSS Position
 
-https://www.youtube.com/embed/lxvnl7dul_M
+[Watch the lesson summary video](https://www.youtube.com/embed/lxvnl7dul_M)
 
 The above video summarises the lesson. If you can't hear the audio you might need to open the video manually through another video playing app.
 
