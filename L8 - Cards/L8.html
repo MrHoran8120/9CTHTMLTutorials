@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L8 - Cards Demo</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background: #ecf0f1;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        /* #region Basic Cards */
+        .basic-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8ed;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .card .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background: #2980b9;
+        }
+        /* #endregion */
+
+        /* #region Image Cards */
+        .image-cards {
+            display: grid;
+            /* Card size is controlled by minmax(300px, 1fr) - minimum 300px width, grows to fill available space */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-card-content {
+            padding: 20px;
+        }
+
+        .image-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .image-card .meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .image-card .description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        /* #endregion */
+
+        /* #region Profile Cards */
+        .profile-cards {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            max-width: 280px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .profile-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+
+        .profile-card .role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .profile-card .bio {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        /* #endregion */
+
+        /* #region Feature Cards */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card:nth-child(2) {
+            border-top-color: var(--secondary-color);
+        }
+
+        .feature-card:nth-child(3) {
+            border-top-color: var(--accent-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), #5dade2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--secondary-color), #58d68d);
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--accent-color), #ec7063);
+        }
+
+        .feature-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        /* #endregion */
+
+        /* #region Responsive Design */
+        @media (max-width: 768px) {
+            .basic-cards,
+            .image-cards,
+            .feature-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        /* #endregion */
+    </style>
+</head>
+<body>
+    <h1>CSS Cards Showcase</h1>
+    
+    <div style="text-align: center; margin-bottom: 30px; padding: 20px; background: white; border-radius: 8px; box-shadow: var(--card-shadow);">
+        <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 10px;">
+            💡 <strong>Real-world example:</strong> A great example of cards in action is the 
+            <a href="https://play.google.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Google Play Store</a>
+        </p>
+        <p style="font-size: 0.95rem; color: var(--text-light);">
+            Notice how they use cards to display apps, games, and other content in an organized, scannable layout.
+        </p>
+    </div>
+
+    <h2 class="section-title">Basic Cards</h2>
+    <div class="basic-cards">
+        <div class="card">
+            <h3>Getting Started</h3>
+            <p>Learn the fundamentals of creating beautiful card layouts with CSS. Master the basics before moving to advanced techniques.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+            <h3>Advanced Styling</h3>
+            <p>Explore hover effects, transitions, and animations to make your cards interactive and engaging for users.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+        <div class="card">
+            <h3>Responsive Design</h3>
+            <p>Create cards that look great on all devices using CSS Grid, Flexbox, and responsive design principles.</p>
+            <a href="#" class="btn">Discover</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Image Cards</h2>
+    <div class="image-cards">
+        <article class="image-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop" alt="Web Development">
+            <div class="image-card-content">
+                <h3>Modern Web Development</h3>
+                <div class="meta">Published on March 15, 2024</div>
+                <p class="description">Discover the latest trends and best practices in modern web development, from responsive design to performance optimization.</p>
+                <a href="#" class="btn">Read Article</a>
+            </div>
+        </article>
+        <article class="image-card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="UI Design">
+            <div class="image-card-content">
+                <h3>UI Design Principles</h3>
+                <div class="meta">Published on March 12, 2024</div>
+                <p class="description">Learn essential UI design principles that will help you create intuitive and beautiful user interfaces.</p>
+                <a href="#" class="btn">Read Article</a>
+            </div>
+        </article>
+        <article class="image-card">
+            <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=400&h=200&fit=crop" alt="CSS Tips">
+            <div class="image-card-content">
+                <h3>CSS Pro Tips</h3>
+                <div class="meta">Published on March 10, 2024</div>
+                <p class="description">Advanced CSS techniques and tricks that will take your styling skills to the next level.</p>
+                <a href="#" class="btn">Read Article</a>
+            </div>
+        </article>
+    </div>
+
+    <h2 class="section-title">Team Profile Cards</h2>
+    <div class="profile-cards">
+        <div class="profile-card">
+            <div class="profile-avatar">JS</div>
+            <h3>Jane Smith</h3>
+            <div class="role">Frontend Developer</div>
+            <p class="bio">Passionate about creating beautiful and functional user interfaces with modern web technologies.</p>
+            <div class="social-links">
+                <a href="#">📧</a>
+                <a href="#">🐦</a>
+                <a href="#">💼</a>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="profile-avatar">MJ</div>
+            <h3>Mike Johnson</h3>
+            <div class="role">UX Designer</div>
+            <p class="bio">Focused on user-centered design and creating seamless digital experiences that users love.</p>
+            <div class="social-links">
+                <a href="#">📧</a>
+                <a href="#">🎨</a>
+                <a href="#">💼</a>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="profile-avatar">AB</div>
+            <h3>Alex Brown</h3>
+            <div class="role">Backend Developer</div>
+            <p class="bio">Building robust and scalable server-side applications with a focus on performance and security.</p>
+            <div class="social-links">
+                <a href="#">📧</a>
+                <a href="#">🐙</a>
+                <a href="#">💼</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Feature Cards</h2>
+    <div class="feature-cards">
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Performance</h3>
+            <p>Optimized code and modern techniques ensure lightning-fast load times and smooth user experiences across all devices.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure & Reliable</h3>
+            <p>Built with security best practices and reliable infrastructure to keep your data safe and your applications running smoothly.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile First</h3>
+            <p>Responsive design ensures your content looks perfect on any device, from mobile phones to desktop computers.</p>
+        </div>
+    </div>
+</body>
+</html>

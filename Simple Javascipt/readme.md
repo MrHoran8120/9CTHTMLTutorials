@@ -1,0 +1,5 @@
+ mbn hello for this tutorial we're going to learn about JavaScript what it is and how it can help you make a more useful website. We're going to be looking at only a few functions of JavaScript and we should note that JavaScript is a very complex fully functioning programming language we're just going to use a couple of features, what we should also note is that it is a programming language designed specifically for manipulating website.
+
+ So we're going to look at a few things first of all how we actually put a script into a program secondly we're going to use the script to set an attribute of an element in this case we're going to make a Blue Square turn red then we're going to change the script so that it will toggle the square red or blue to make a toggle we're going to have to be able to read the current status of the square
+
+ the final thing that we'll do is we will look at making elements appear and disappear this can be very useful for creating drop downs etceteramega dropdowns

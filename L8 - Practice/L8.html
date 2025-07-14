@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+  --yellow-button: #eac435;
+  --green-button: rgb(95, 165, 3);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+        
+/* #region Header settings */
+        .logo {
+            font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 900;
+            letter-spacing:  -0.5px;
+            font-size: 18pt;
+            display : flex;
+            align-items: center;
+        }
+
+        .headerRescue {
+            color : #5fa503
+        }
+
+        .headerContainer {
+            display : flex;
+            height : 61px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .yellowButton { 
+            background-color: var(--yellow-button) ;
+            padding : 8px 20px;
+            border-radius : 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+/* #endregion */
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="headerContainer">
+        <div class="yellowButton">Donate</div>
+        <div class="logo">
+            <img src="../L8 - Practice/resources/puppyhead.png" alt="" height="38px">
+            <span class="headerPet">Pet</span><span class="headerRescue">Rescue</span></div>
+        <div class="loginSignup">
+            <span>Login</span>
+            <span class="signupButton">Sign Up</span>
+        </div>
+    </div>
+</body>
+</html>
