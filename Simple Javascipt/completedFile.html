@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #myTestDiv {
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            width : 200px;
+            height : 200px;
+            background-color: blue;
+            color : white;
+        }
+    </style>
+    <script>
+        function changeColor() {
+
+            // get the element
+            theElement = window.getComputedStyle(document.getElementById('myTestDiv'))
+
+            // get the computed style
+            theColor = theElement.backgroundColor;
+
+            theElement.innerHTML = theColor;
+
+            if (theColor=="rgb(0, 0, 255)")
+                document.getElementById('myTestDiv').style.backgroundColor='red';
+            else
+                document.getElementById('myTestDiv').style.backgroundColor='blue'
+        }
+
+        function hideMe() {
+            document.getElementById('myTestDiv').style.display='none';
+        }
+
+        
+    </script>
+</head>
+<body>
+    <button onclick="hideMe()">hide me</button>
+    <button onclick="changeColor()">Toggle Me</button>
+    <br><br>
+    <div id="myTestDiv" onclick="hideMe()"<h2>Hello</h2></div>
+</body>
+</html>

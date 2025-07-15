@@ -1,5 +1,8 @@
 # Simple JavaScript - Live Coding Lesson
 
+## 🎥 Video Tutorial
+Watch the complete lesson video: [Simple JavaScript Tutorial](https://youtu.be/DxQLZcCoFVg)
+
 ## Lesson Overview
 Hello! For this tutorial we're going to learn about JavaScript - what it is and how it can help you make a more useful website. We're going to be looking at only a few functions of JavaScript and we should note that JavaScript is a very complex, fully functioning programming language. We're just going to use a couple of features. What we should also note is that it is a programming language designed specifically for manipulating websites.
 
@@ -14,7 +17,8 @@ Hello! For this tutorial we're going to learn about JavaScript - what it is and 
 ### For Students:
 - Clone or fork this repository to have your own copy
 - Join the teacher's Live Share session to follow along
-- Practice the concepts by coding along in your own `index.html` file
+- **Use `studentWorkFile.html`** for coding along during the lesson
+- **Check `completedFile.html`** if you want to see the finished version
 - You can experiment and make changes without affecting the shared session
 
 ## What We'll Learn
@@ -31,6 +35,11 @@ The `index.html` file contains a basic HTML structure with:
 - A styled div element (`#myTestDiv`) - our blue square
 - Empty `<script>` tags ready for JavaScript code
 - CSS styling for a centered blue box with white text
+
+## Available Files
+- **`studentWorkFile.html`** - Your work-along file for coding during the lesson
+- **`completedFile.html`** - The finished example if you want to see the completed code
+- **`index.html`** - The teacher's demonstration file (used during live coding)
 
 ## Tips for Students
 1. **Follow along actively** - don't just watch, code along!
