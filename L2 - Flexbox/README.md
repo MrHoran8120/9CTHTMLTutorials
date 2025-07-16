@@ -1,5 +1,7 @@
 # Lesson 2 - Flexbox Fundamentals
 
+Here is a link to a video of this lesson https://youtu.be/poe347FbmxE
+
 ## Overview
 
 This lesson introduces CSS Flexbox, a powerful layout method that makes it easy to create responsive designs. Students will learn how Flexbox relates to Figma's Auto Layout and how to translate responsive design concepts from design tools to code.
