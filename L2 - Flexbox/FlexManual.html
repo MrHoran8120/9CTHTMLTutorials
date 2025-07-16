@@ -357,8 +357,42 @@
     <!-- Perfect Centering -->
     <div class="demo-section">
         <h2>5. Perfect Centering</h2>
+        <p><strong>The most common use case:</strong> Centering content both horizontally and vertically</p>
+        
+        <h3>Perfect Center Example</h3>
         <div class="perfect-center">
             Perfectly Centered Content!
+        </div>
+        
+        <h3>Code for Perfect Centering:</h3>
+        <div style="background: #f8f9fa; padding: 15px; border: 1px solid #dee2e6; border-radius: 5px; font-family: 'Courier New', monospace; margin: 10px 0;">
+            <strong>CSS:</strong><br>
+            .perfect-center {<br>
+            &nbsp;&nbsp;display: flex;<br>
+            &nbsp;&nbsp;justify-content: center; /* Centers horizontally */<br>
+            &nbsp;&nbsp;align-items: center; /* Centers vertically */<br>
+            &nbsp;&nbsp;height: 200px; /* Need a height to see vertical centering */<br>
+            }
+        </div>
+        
+        <h3>More Centering Examples</h3>
+        
+        <!-- Horizontal only -->
+        <p><strong>Horizontal Center Only:</strong></p>
+        <div style="display: flex; justify-content: center; height: 100px; background: linear-gradient(45deg, #2196f3, #21cbf3); color: white; font-size: 18px; font-weight: bold; border-radius: 8px; margin: 10px 0; padding: 10px;">
+            <div style="background-color: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px;">Horizontally Centered (stays at top)</div>
+        </div>
+        
+        <!-- Vertical only -->
+        <p><strong>Vertical Center Only:</strong></p>
+        <div style="display: flex; align-items: center; height: 100px; background: linear-gradient(45deg, #4caf50, #8bc34a); color: white; font-size: 18px; font-weight: bold; border-radius: 8px; margin: 10px 0;">
+            <div style="background-color: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px;">Only Vertically Centered</div>
+        </div>
+        
+        <!-- Both -->
+        <p><strong>Both Horizontal AND Vertical (Perfect Center):</strong></p>
+        <div style="display: flex; justify-content: center; align-items: center; height: 120px; background: linear-gradient(45deg, #ff9800, #ffb74d); color: white; font-size: 18px; font-weight: bold; border-radius: 8px; margin: 10px 0;">
+            <div style="background-color: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px;">Perfect Center!</div>
         </div>
     </div>
 

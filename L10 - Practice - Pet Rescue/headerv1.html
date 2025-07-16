@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --background-color: #ffffff;
+  --yellowButton : #eac435;
+  --greyButton : #dad4d4ef;
+  --menuBarGrey : rgb(183, 179, 179);;
+  --text-color: #EFEFEFEF;
+}
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding :10px;
+        }
+
+    /* #region header */
+        .headerContainer {
+            display : flex;
+            justify-content: space-between;
+            align-items: center;
+            padding : 10px;
+        }
+
+        .yellowButton {
+            background-color: var(--yellowButton);
+            padding: 8px 16px;
+            border-radius: 5px;
+            filter: drop-shadow(3px 3px 3px gray);
+        }
+
+        .greyButton {
+            background-color: var(--greyButton);
+            padding: 10px;
+            border-radius: 5px;
+            filter: drop-shadow(3px 3px 3px gray);
+        }
+
+        .headerGrp2 {
+            display : flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+    /* #endregion */
+        .mainArea { 
+            display : flex;
+        }
+    /* #region menuBar */
+
+        .menuBar {
+            background-color: var(--greyButton);
+            display : flex;
+            justify-content: space-around;
+            font-size : 10pt;
+            gap : 25px;
+            padding : 10px;
+        }
+
+        .menuBarGrp1 {
+            display : flex;
+            gap : 10px;
+    
+        } 
+        .pupCutoutGrp {
+            position : relative;
+        }
+    /* #endregion */
+    </style>
+
+</head>
+<body>
+<!-- #region header -->
+    <div class="headerContainer">
+        <span class="headerItem yellowButton">Donate</span>
+        <div class="headerGrp2">
+            <img src="./resources/puppyhead.png" width=40px; height = 40px; alt="">
+            <span class="headerItem" style = "font-weight: bold;font-size: larger;">
+                <span class="logo">Pet</span>
+                <span class="logo" style="color:green;">Rescue</span>
+                 
+            </span>
+        </div>
+        <div class="headerGrp1">
+            <span class="headerItem">Login</span>
+            <span class="headerItem greyButton">Sign up</span>
+        </div>
+    </div>
+<!-- #endregion -->
+
+<!-- #region menuBar -->
+   <div class="menuBar">
+        <span class="menuBarItem">Menu </span>
+        <div class="menuBarGrp1">
+            <span class="menuBarItem">DOGS</span>
+            <span class="menuBarItem">CATS</span>
+            <span class="menuBarItem">OTHER PETS</span>
+            <span class="menuBarItem">GET PET SUPPORT </span>
+        </div>
+        <span class="menuBarItem">About</span>
+        <span class="menuBarItem">PetRescue</span>
+        <span class="menuBarItem">Good Reads </span>
+   </div>
+
+   
+   <!-- #endregion -->
+
+
+   <!-- #region MainBody -->
+    <div class="mainArea">
+        <div class="main1">
+            <p style="font-weight: 800;font-size: 12;">PetRescue's Best Friends' Walk</p>
+        
+            <p style="font-size: 30px;">Walk with your best friend (furry or human)</p>
+            <p>to help homeless pets find their best friend.</p>
+        
+            <p>PetRescue’s Best Friends' Walk is a free fitness and fundraising challenge for everyone and their BFF! </p>
+        
+            <p>Set a fundraising goal and choose how far you and your BFF will walk during September to help homeless pets find love.</p>
+        
+            <p>Register today!(links to an external website)</p>
+        </div>
+        <div class="pupCutoutGrp">
+            <img src="./resources/bigpup.png" width="480px" alt="">
+            <img src="./resources/bestFriendsCutout.svg" style="position: absolute; top: 350px;left : 100px; width :250px" alt="">
+        </div>
+    
+    </div>
+
+
+   <!-- #endregion -->
+</body>
+</html>

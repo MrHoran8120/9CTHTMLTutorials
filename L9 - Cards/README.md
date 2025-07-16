@@ -1,4 +1,4 @@
-# L9 - Cards
+# L10 - Practice Pet Rescue
 
 ## Learning Objectives
 By the end of this lesson, students will be able to:
