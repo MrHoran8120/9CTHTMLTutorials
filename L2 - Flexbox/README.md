@@ -1,6 +1,7 @@
 # Lesson 2 - Flexbox Fundamentals
 
-Here is a link to a video of this lesson https://youtu.be/poe347FbmxE
+## 🎥 Video Tutorial
+Watch the complete lesson video: [Flexbox Fundamentals Tutorial](https://youtu.be/poe347FbmxE)
 
 ## Overview
 
