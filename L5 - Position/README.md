@@ -6,7 +6,7 @@ The above video summarises the lesson. If you can't hear the audio you might nee
 
 ## Overview
 ...existing content...
-```
+
 The above video summarises the lesson. If you can't hear the audio you might need to open the video manually through another video playing app.
 
 ## Overview
