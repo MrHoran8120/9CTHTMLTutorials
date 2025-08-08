@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Demo - Lesson 6</title>
+    
+    <style>
+        /* CSS Variables defined in :root for global access */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #e74c3d;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #f39c12;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            
+            /* Spacing variables */
+            --spacing-xs: 5px;
+            --spacing-sm: 10px;
+            --spacing-md: 20px;
+            --spacing-lg: 30px;
+            --spacing-xl: 40px;
+            
+            /* Border and sizing */
+            --border-radius: 8px;
+            --max-width: 900px;
+            
+            /* Font variables */
+            --font-family: 'Arial', sans-serif;
+            --font-size-sm: 0.9rem;
+            --font-size-md: 1rem;
+            --font-size-lg: 1.2rem;
+            --font-size-xl: 1.5rem;
+        }
+        
+        /* Dark theme variables */
+        .dark-theme {
+            --primary-color: #5dade2;
+            --secondary-color: #ec7063;
+            --background-color: #2c3e50;
+            --text-color: #ecf0f1;
+            --accent-color: #f4d03f;
+            --success-color: #58d68d;
+            --warning-color: #f7dc6f;
+            --danger-color: #f1948a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .container {
+            background: var(--background-color);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-xl);
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-md);
+        }
+        
+        .demo-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            margin: var(--spacing-xs);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: var(--font-size-md);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .button.secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .button.accent {
+            background-color: var(--accent-color);
+        }
+        
+        .button.success {
+            background-color: var(--success-color);
+        }
+        
+        .button.warning {
+            background-color: var(--warning-color);
+        }
+        
+        .button.danger {
+            background-color: var(--danger-color);
+        }
+        
+        .card {
+            background: var(--background-color);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .card.accent {
+            border-top-color: var(--accent-color);
+        }
+        
+        .card.secondary {
+            border-top-color: var(--secondary-color);
+        }
+        
+        .highlight {
+            background-color: var(--accent-color);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            font-weight: bold;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .color-swatch {
+            text-align: center;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .color-swatch.primary { background-color: var(--primary-color); }
+        .color-swatch.secondary { background-color: var(--secondary-color); }
+        .color-swatch.accent { background-color: var(--accent-color); }
+        .color-swatch.success { background-color: var(--success-color); }
+        .color-swatch.warning { background-color: var(--warning-color); }
+        .color-swatch.danger { background-color: var(--danger-color); }
+        
+        .theme-toggle {
+            position: fixed;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: var(--font-size-md);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+        
+        .code-example {
+            background: #f8f9fa;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: var(--spacing-md) 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .benefit-card {
+            background: var(--background-color);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border: 2px solid var(--primary-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            border-color: var(--secondary-color);
+            transform: scale(1.02);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Variables in Action</h1>
+        
+        <div class="demo-section">
+            <h2>Welcome to CSS Variables Demo!</h2>
+            <p>This entire page uses CSS Variables for consistent theming. Try switching to dark mode!</p>
+        </div>
+        
+        <h2>Color Palette</h2>
+        <div class="color-palette">
+            <div class="color-swatch primary">Primary</div>
+            <div class="color-swatch secondary">Secondary</div>
+            <div class="color-swatch accent">Accent</div>
+            <div class="color-swatch success">Success</div>
+            <div class="color-swatch warning">Warning</div>
+            <div class="color-swatch danger">Danger</div>
+        </div>
+        
+        <h2>Button Examples</h2>
+        <div style="text-align: center; margin: var(--spacing-lg) 0;">
+            <button class="button">Primary Button</button>
+            <button class="button secondary">Secondary Button</button>
+            <button class="button accent">Accent Button</button>
+            <button class="button success">Success Button</button>
+            <button class="button warning">Warning Button</button>
+            <button class="button danger">Danger Button</button>
+        </div>
+        
+        <h2>Card Components</h2>
+        <div class="card">
+            <h3>Primary Card</h3>
+            <p>This card uses the <span class="highlight">primary color</span> for its border. All spacing and colors are defined using CSS variables.</p>
+        </div>
+        
+        <div class="card secondary">
+            <h3>Secondary Card</h3>
+            <p>This card demonstrates how easy it is to create variations using the same CSS variable system.</p>
+        </div>
+        
+        <div class="card accent">
+            <h3>Accent Card</h3>
+            <p>Different border colors, but consistent spacing and styling throughout.</p>
+        </div>
+        
+        <h2>Benefits of CSS Variables</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>🎨 Easy Theming</h3>
+                <p>Change your entire site's color scheme by updating just a few variables</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🔧 Maintainable</h3>
+                <p>No more hunting through CSS files to update colors - change once, apply everywhere</p>
+            </div>
+            <div class="benefit-card">
+                <h3>⚡ Dynamic</h3>
+                <p>Can be changed with JavaScript for interactive themes and customization</p>
+            </div>
+            <div class="benefit-card">
+                <h3>📱 Consistent</h3>
+                <p>Ensures design consistency across your entire website or application</p>
+            </div>
+        </div>
+        
+        <h2>Code Example</h2>
+        <div class="code-example">
+/* Define variables once */
+:root {
+  --primary-color: #3498db;
+  --spacing-md: 20px;
+}
+
+/* Use everywhere */
+.button {
+  background: var(--primary-color);
+  padding: var(--spacing-md);
+}
+
+.header {
+  color: var(--primary-color);
+  margin: var(--spacing-md);
+}
+        </div>
+        
+        <div class="demo-section">
+            <h2>Try the Dark Theme!</h2>
+            <p>Click the theme toggle button in the top-right corner to see how CSS variables make theme switching effortless.</p>
+        </div>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const button = document.querySelector('.theme-toggle');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                button.textContent = '☀️ Light Mode';
+            } else {
+                button.textContent = '🌙 Dark Mode';
+            }
+            
+            // Store theme preference
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+        
+        // Load saved theme preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.querySelector('.theme-toggle').textContent = '☀️ Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>
