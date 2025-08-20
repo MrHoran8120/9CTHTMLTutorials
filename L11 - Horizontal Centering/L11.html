@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L11 - Horizontal Centering Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .demo-box {
+            background-color: #e0e0e0;
+            height: 150px;
+            border: 2px dashed #999;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .centered-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+        }
+
+        .method-description {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .code-snippet {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        /* Method 1: Text-align (for inline/inline-block elements) */
+        .method1 {
+            text-align: center;
+        }
+        
+        .method1 .centered-item {
+            display: inline-block;
+        }
+
+        /* Method 2: Margin auto (for block elements) */
+        .method2 .centered-item {
+            margin: 0 auto;
+        }
+
+        /* Method 3: Flexbox */
+        .method3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Method 4: CSS Grid */
+        .method4 {
+            display: grid;
+            place-items: center;
+        }
+
+        /* Method 5: Absolute positioning with transform */
+        .method5 .centered-item {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Method 6: Absolute positioning with margin */
+        .method6 .centered-item {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px; /* half of width */
+            margin-top: -30px;   /* half of height */
+        }
+
+        /* Method 7: Table-cell display */
+        .method7 {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .method7 .centered-item {
+            display: inline-block;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .pros, .cons {
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .pros {
+            background-color: #e8f5e8;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .cons {
+            background-color: #ffe8e8;
+            border-left: 4px solid #f44336;
+        }
+
+        .pros h4, .cons h4 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Horizontal Centering Methods in CSS</h1>
+
+    <!-- Method 1: Text-align -->
+    <div class="container">
+        <h2>Method 1: text-align: center</h2>
+        <div class="method-description">
+            Best for: Inline and inline-block elements (text, images, buttons)
+        </div>
+        <div class="demo-box method1">
+            <div class="centered-item">Centered with text-align</div>
+        </div>
+        <div class="code-snippet">
+.parent {
+    text-align: center;
+}
+
+.child {
+    display: inline-block;
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Simple and widely supported</li>
+                    <li>Great for text and inline elements</li>
+                    <li>Works in all browsers</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Only works for inline/inline-block elements</li>
+                    <li>Affects all child elements</li>
+                    <li>Limited to horizontal centering only</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method 2: Margin auto -->
+    <div class="container">
+        <h2>Method 2: margin: 0 auto</h2>
+        <div class="method-description">
+            Best for: Block elements with a defined width
+        </div>
+        <div class="demo-box method2">
+            <div class="centered-item">Centered with margin auto</div>
+        </div>
+        <div class="code-snippet">
+.child {
+    width: 200px; /* Must have a defined width */
+    margin: 0 auto;
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Classic and reliable method</li>
+                    <li>Works well for content blocks</li>
+                    <li>Excellent browser support</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Requires a defined width</li>
+                    <li>Only horizontal centering</li>
+                    <li>Doesn't work with inline elements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method 3: Flexbox -->
+    <div class="container">
+        <h2>Method 3: Flexbox (justify-content: center)</h2>
+        <div class="method-description">
+            Best for: Modern layouts, both horizontal and vertical centering
+        </div>
+        <div class="demo-box method3">
+            <div class="centered-item">Centered with Flexbox</div>
+        </div>
+        <div class="code-snippet">
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Also centers vertically */
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Very flexible and powerful</li>
+                    <li>Can center both horizontally and vertically</li>
+                    <li>Works with any element type</li>
+                    <li>Great for responsive design</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Not supported in very old browsers</li>
+                    <li>Can be overkill for simple centering</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method 4: CSS Grid -->
+    <div class="container">
+        <h2>Method 4: CSS Grid (place-items: center)</h2>
+        <div class="method-description">
+            Best for: Grid layouts and when you need precise control
+        </div>
+        <div class="demo-box method4">
+            <div class="centered-item">Centered with Grid</div>
+        </div>
+        <div class="code-snippet">
+.parent {
+    display: grid;
+    place-items: center;
+}
+
+/* Alternative syntax: */
+.parent-alt {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Very concise syntax</li>
+                    <li>Centers both horizontally and vertically</li>
+                    <li>Great for complex layouts</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Newer CSS feature</li>
+                    <li>Might be overkill for simple centering</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method 5: Absolute positioning with transform -->
+    <div class="container">
+        <h2>Method 5: Absolute Position + Transform</h2>
+        <div class="method-description">
+            Best for: When you need to center over other content or create overlays
+        </div>
+        <div class="demo-box method5">
+            <div class="centered-item">Centered with Transform</div>
+        </div>
+        <div class="code-snippet">
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Works regardless of element size</li>
+                    <li>Creates overlays effectively</li>
+                    <li>Centers both horizontally and vertically</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Removes element from document flow</li>
+                    <li>Can cause rendering issues</li>
+                    <li>Transform not supported in very old browsers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method 6: Absolute positioning with margin -->
+    <div class="container">
+        <h2>Method 6: Absolute Position + Negative Margins</h2>
+        <div class="method-description">
+            Best for: Legacy browser support when element dimensions are known
+        </div>
+        <div class="demo-box method6">
+            <div class="centered-item">Centered with Margins</div>
+        </div>
+        <div class="code-snippet">
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 60px;
+    margin-left: -100px; /* Half of width */
+    margin-top: -30px;   /* Half of height */
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Works in very old browsers</li>
+                    <li>Precise positioning control</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Requires knowing exact dimensions</li>
+                    <li>Not responsive</li>
+                    <li>Maintenance nightmare if sizes change</li>
+                    <li>Removes element from document flow</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method 7: Table-cell display -->
+    <div class="container">
+        <h2>Method 7: display: table-cell</h2>
+        <div class="method-description">
+            Best for: Legacy browser support and when flexbox/grid aren't available
+        </div>
+        <div class="demo-box method7">
+            <div class="centered-item">Centered with Table-cell</div>
+        </div>
+        <div class="code-snippet">
+.parent {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.child {
+    display: inline-block;
+}
+        </div>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>✅ Pros:</h4>
+                <ul>
+                    <li>Works in older browsers</li>
+                    <li>Centers both horizontally and vertically</li>
+                    <li>Good fallback method</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>❌ Cons:</h4>
+                <ul>
+                    <li>Semantically awkward (not actually a table)</li>
+                    <li>Limited layout flexibility</li>
+                    <li>Can interfere with other positioning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="container">
+        <h2>🎯 Quick Reference Guide</h2>
+        <div class="method-description">
+            <strong>Choose the right method for your situation:</strong>
+        </div>
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+            <h3 style="margin-top: 0;">🏆 Modern Recommendations:</h3>
+            <ul>
+                <li><strong>Flexbox</strong> - Best all-around choice for most scenarios</li>
+                <li><strong>CSS Grid</strong> - Great for complex layouts</li>
+                <li><strong>margin: 0 auto</strong> - Simple and reliable for block elements</li>
+            </ul>
+            
+            <h3>⚡ Quick Decision Tree:</h3>
+            <ul>
+                <li><strong>Text or inline elements?</strong> → Use <code>text-align: center</code></li>
+                <li><strong>Block element with known width?</strong> → Use <code>margin: 0 auto</code></li>
+                <li><strong>Need vertical centering too?</strong> → Use <strong>Flexbox</strong> or <strong>Grid</strong></li>
+                <li><strong>Creating an overlay?</strong> → Use <strong>absolute + transform</strong></li>
+                <li><strong>Supporting very old browsers?</strong> → Use <strong>table-cell</strong> or <strong>margin auto</strong></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
