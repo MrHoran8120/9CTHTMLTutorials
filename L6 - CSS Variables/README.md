@@ -15,10 +15,10 @@ Define your key colors in the `:root` selector:
 
 ```css
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #e74c3c;
+  --pc: #3498db;
+  --secondary-color: #e74c3d;
   --background-color: #ffffff;
-  --text-color: #333333;
+  --tc: #333333;
 }
 ```
 
@@ -32,7 +32,7 @@ body {
 }
 
 .header {
-  background-color: var(--primary-color);
+  background-color: var(--pc);
   color: white;
 }
 

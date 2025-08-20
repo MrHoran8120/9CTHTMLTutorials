@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Exercise - Lesson 6</title>
+    
+    <style>
+        /* TODO: Step 1 - Define CSS Variables in :root
+           Create variables for:
+           --primary-color: #3498db
+           --secondary-color: #e74c3c
+           --background-color: #ffffff
+           --text-color: #333333
+           --accent-color: #f39c12
+           --border-radius: 8px
+           --spacing-large: 30px
+           --spacing-medium: 20px
+           --spacing-small: 10px
+        */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            /* TODO: Step 2 - Use CSS variables for background-color and color */
+            background-color: #f5f5f5; /* Replace with var(--background-color) */
+            color: #333; /* Replace with var(--text-color) */
+        }
+        
+        .container {
+            background: white;
+            /* TODO: Step 3 - Use variables for padding and border-radius */
+            padding: 30px; /* Replace with var(--spacing-large) */
+            border-radius: 10px; /* Replace with var(--border-radius) */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            /* TODO: Step 4 - Use primary color variable */
+            color: #3498db; /* Replace with var(--primary-color) */
+            text-align: center;
+            /* TODO: Step 5 - Use spacing variable for margin */
+            margin-bottom: 30px; /* Replace with var(--spacing-large) */
+        }
+        
+        h2 {
+            /* TODO: Step 6 - Use secondary color variable */
+            color: #e74c3c; /* Replace with var(--secondary-color) */
+            margin-bottom: 15px;
+        }
+        
+        .exercise-box {
+            background: #e3f2fd;
+            /* TODO: Step 7 - Use spacing variables for padding and margin */
+            padding: 20px; /* Replace with var(--spacing-medium) */
+            margin: 20px 0; /* Replace with var(--spacing-medium) for top/bottom */
+            /* TODO: Step 8 - Use border-radius variable */
+            border-radius: 5px; /* Replace with var(--border-radius) */
+            /* TODO: Step 9 - Use primary color variable for border */
+            border-left: 4px solid #3498db; /* Replace color with var(--primary-color) */
+        }
+        
+        .step {
+            background: #f8f9fa;
+            /* TODO: Step 10 - Use spacing variables */
+            padding: 15px; /* Replace with var(--spacing-medium) */
+            margin: 15px 0; /* Replace with var(--spacing-medium) for top/bottom */
+            /* TODO: Step 11 - Use border-radius variable */
+            border-radius: 5px; /* Replace with var(--border-radius) */
+            border-left: 3px solid #28a745;
+        }
+        
+        .button {
+            display: inline-block;
+            /* TODO: Step 12 - Use variables for colors, padding, and border-radius */
+            background-color: #e74c3c; /* Replace with var(--secondary-color) */
+            color: white;
+            padding: 12px 24px; /* Replace with var(--spacing-medium) var(--spacing-large) */
+            text-decoration: none;
+            border-radius: 5px; /* Replace with var(--border-radius) */
+            margin: 10px 5px; /* Replace with var(--spacing-small) */
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            /* TODO: Step 13 - Create a darker version using var() with fallback */
+            background-color: #c0392b; /* Replace with var(--secondary-color-dark, #c0392b) */
+        }
+        
+        .button.primary {
+            /* TODO: Step 14 - Use primary color variable */
+            background-color: #3498db; /* Replace with var(--primary-color) */
+        }
+        
+        .button.primary:hover {
+            /* TODO: Step 15 - Create a darker version using var() with fallback */
+            background-color: #2980b9; /* Replace with var(--primary-color-dark, #2980b9) */
+        }
+        
+        .button.accent {
+            /* TODO: Step 16 - Use accent color variable */
+            background-color: #f39c12; /* Replace with var(--accent-color) */
+        }
+        
+        .card {
+            background: white;
+            /* TODO: Step 17 - Use variables for padding, margin, and border-radius */
+            padding: 20px; /* Replace with var(--spacing-medium) */
+            margin: 15px 0; /* Replace with var(--spacing-medium) for top/bottom */
+            border-radius: 8px; /* Replace with var(--border-radius) */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            /* TODO: Step 18 - Use primary color variable for border */
+            border-top: 3px solid #3498db; /* Replace color with var(--primary-color) */
+        }
+        
+        .highlight {
+            /* TODO: Step 19 - Use accent color variable for background */
+            background-color: #f39c12; /* Replace with var(--accent-color) */
+            color: white;
+            /* TODO: Step 20 - Use spacing variables */
+            padding: 5px 10px; /* Replace with var(--spacing-small) var(--spacing-medium) */
+            border-radius: 3px; /* Replace with var(--border-radius) */
+            font-weight: bold;
+        }
+        
+        /* TODO: BONUS Challenge - Create a Dark Theme
+           Uncomment the section below and define dark theme variables:
+        
+        .dark-theme {
+            --primary-color: #5dade2;
+            --secondary-color: #ec7063;
+            --background-color: #2c3e50;
+            --text-color: #ecf0f1;
+            --accent-color: #f4d03f;
+        }
+        */
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            /* TODO: Step 21 - Use variables for styling the theme toggle button */
+            background: #3498db; /* Replace with var(--primary-color) */
+            color: white;
+            border: none;
+            padding: 10px 15px; /* Replace with var(--spacing-small) var(--spacing-medium) */
+            border-radius: 5px; /* Replace with var(--border-radius) */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Variables Exercise</h1>
+        
+        <div class="exercise-box">
+            <h2>Your Mission</h2>
+            <p>Replace all the hardcoded color values and spacing with CSS variables. Follow the TODO comments in the CSS above!</p>
+        </div>
+        
+        <div class="step">
+            <h3>Step 1: Define Your Variables</h3>
+            <p>In the <code>:root</code> selector, define variables for colors, spacing, and border-radius. Variable names must start with <code>--</code></p>
+        </div>
+        
+        <div class="step">
+            <h3>Step 2-21: Replace Hardcoded Values</h3>
+            <p>Go through each TODO comment and replace the hardcoded values with <code>var(--variable-name)</code>. Don't forget to provide fallback values where appropriate!</p>
+        </div>
+        
+        <div class="card">
+            <h2>Sample Card Component</h2>
+            <p>This card should use your CSS variables for consistent styling. Notice how the border-top color should match your primary color.</p>
+            <p>Here's some <span class="highlight">highlighted text</span> that should use your accent color.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Another Card</h2>
+            <p>All cards should look consistent because they use the same variables. This makes it easy to update your entire design by changing just a few variable values!</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#" class="button primary">Primary Button</a>
+            <a href="#" class="button">Secondary Button</a>
+            <a href="#" class="button accent">Accent Button</a>
+        </div>
+        
+        <div class="exercise-box">
+            <h2>Testing Your Work</h2>
+            <p>Once you've implemented all the variables, try changing the color values in your <code>:root</code> selector. You should see the entire page theme change instantly!</p>
+        </div>
+        
+        <div class="step">
+            <h3>Bonus Challenge: Dark Theme</h3>
+            <p>Uncomment the dark theme CSS and add a class toggle to switch between light and dark themes. You can use JavaScript to add/remove the <code>dark-theme</code> class from the body element.</p>
+        </div>
+        
+        <!-- Bonus: Theme toggle button -->
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+    </div>
+
+    <script>
+        // Bonus: Simple theme toggle functionality
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const button = document.querySelector('.theme-toggle');
+            if (document.body.classList.contains('dark-theme')) {
+                button.textContent = '☀️ Light Mode';
+            } else {
+                button.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
